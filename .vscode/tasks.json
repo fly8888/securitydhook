@@ -1,0 +1,71 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        },
+        {
+            "label": "make",
+            "type": "shell",
+            "command": "make clean&&make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "make package",
+            "type": "shell",
+            "command": "make clean&&make package ",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "make install",
+            "type": "shell",
+            "command": "make clean&&make package install",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "make clean",
+            "type": "shell",
+            "command": "make clean &&[ -f \"./Makefile\" ]&&[ -d \"./.theos/packages\" ]&&rm -r ./.theos/packages;[ -f \"./Makefile\" ]&&[ -d \"./packages\" ]&&rm -r ./packages;echo \"Clean Success\"",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
+

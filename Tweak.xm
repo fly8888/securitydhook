@@ -66,6 +66,7 @@ extern "C" CFTypeRef SecTaskCopyValueForEntitlement(SecTrustRef task, CFStringRe
 		{
 			if(origGroups &&[(NSArray *)origGroups containsObject:@"*"])
 			{
+				CFRelease(origGroups);
 				NSArray * groups = getAllKeychainGroups();
 				return (CFArrayRef)groups;
 			}

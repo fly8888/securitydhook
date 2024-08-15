@@ -53,7 +53,8 @@ NSArray * getAllKeychainGroups()
 	}
 	
 	sqlite3_close(db);
-	return [results autorelease];
+	//不用释放
+	return results;
 }
 
 
